@@ -25,9 +25,7 @@ for i=1:150;
     %Top right
   if c+2<=size(Latice,2) && r-2>0
     if Latice(r-1,c)==0 && Latice(r-2,c)==0 && Latice(r,c+1)==0 && Latice(r-1,c+1)==0 && Latice(r-2,c+1)==0 && Latice(r,c+2)==0 && Latice(r-1,c+2)==0 && Latice(r-2,c+2)==0;
-       if rand()<DiagProb
-        Latice(r-1,c+1)=1;
-       end
+       Latice(r-1,c+1)=1;
     end
   end
 
@@ -73,8 +71,7 @@ for i=1:150;
     end
    end
   end
- end
-
+end
 imagesc(Latice);
 axis equal;
 figure(1);
