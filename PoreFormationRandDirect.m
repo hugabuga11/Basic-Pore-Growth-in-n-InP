@@ -1,6 +1,5 @@
-Latice=zeros(500); %Amount of Columns
+Latice=zeros(300); %Amount of Columns
 Latice(1,round(length(Latice)/2))=1; %Chooses row 1 column 50 to be a 1
- %Chooses row 1 column 100 to be a 1
 
 for i=1:200;
   [row,col]=find(Latice==1);  %Checks for 1's in Latice
@@ -15,15 +14,15 @@ for i=1:200;
     r=row(RNG(j));
     c=col(RNG(j));
 
-    DiagProbTR=0.5;
-    DiagProbTL=0.5;
-    DiagProbBR=0.5;
-    DiagProbBL=0.5;
+    DiagProbTR=0;
+    DiagProbTL=0;
+    DiagProbBR=0.8;
+    DiagProbBL=0.8;
 
     LatProbL=0.5;
     LatProbR=0.5;
-    LatProbU=0.5;
-    LatProbD=0.5;
+    LatProbU=0;
+    LatProbD=0.1;
 
     %Top left
   if c-2>0 && r-2>0
@@ -102,5 +101,5 @@ for i=1:200;
 imagesc(Latice);
 axis equal;
 figure(1);
-%print('LaticeOutputDiag.eps','-depsc');  %Save as eps
+print('LaticeOutputDiag.eps','-depsc');  %Save as eps
 
